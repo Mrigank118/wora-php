@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>WORA</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico?v=2">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- Vite CSS for Tailwind -->
     @vite('resources/css/app.css')
 </head>
@@ -21,8 +24,9 @@
 
         <!-- Left Section (expanded) -->
         <x-chatbot />
-
     </main>
+
+    <x-footer />
 
 </body>
 

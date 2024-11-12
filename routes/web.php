@@ -30,3 +30,7 @@ Route::post('/adapt-content', [ContentAdaptationController::class, 'adaptContent
 Route::post('/save-notes', [ChatbotController::class, 'saveNotes'])->middleware('auth');
 Route::middleware(['auth'])->get('/notes', [NoteController::class, 'viewNotes'])->name('notes');
 Route::middleware(['auth'])->get('/api/notes', [NoteController::class, 'fetchNotes']);
+
+use App\Http\Controllers\MailController;
+
+Route::post('/send-thank-you-mail', [MailController::class, 'sendThankYouMail'])->name('sendThankYouMail');

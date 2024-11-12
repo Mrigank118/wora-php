@@ -14,67 +14,136 @@
 <body class="bg-gray-100">
 
     <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6 p-6">
+        
         <!-- Chatbox Section -->
-        <div class="flex-1 md:w-2/3 bg-white p-6 rounded-lg shadow-lg h-[780px] flex flex-col">
+        <div class="flex-1 md:w-2/3 bg-white p-6 rounded-lg shadow-lg h-[750px] flex flex-col">
             <!-- Flex container for header and button -->
             <div class="flex justify-between items-center mb-4">
-                <h2 class="text-xl font-bold">What's on your mind?</h2>
+                <h2 class="text-xl text-gray-600 font-bold">What's on your mind?</h2>
                 <div>
-                    <button id="adapt-btn" class="p-2 px-5 bg-green-400 text-white rounded-lg hover:bg-green-600">
-                        Adapt
+                    <button id="adapt-btn" class="rounded-md bg-black py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-gray-800 focus:shadow-none active:bg-gray-800 hover:bg-gray-800 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
+                        Adapt Response
                     </button>
+
                     <!-- Show the 'Save Notes' button only if the user is logged in -->
                     @auth
-                    <button id="save-notes-btn" class="p-2 px-5 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500">
+                    <button id="save-notes-btn" class="p-2 px-5 bg-black text-white rounded-lg hover:bg-gray-800">
                         Save Notes
                     </button>
+
                     @endauth
                 </div>
             </div>
 
             <!-- Chatbox Container -->
-            <div id="chat-container" class="flex-1 overflow-hidden p-4 bg-gray-100 rounded-lg w shadow-lg mb-4 flex flex-col">
+            <div id="chat-container" class="flex-1 overflow-hidden p-4 bg-white-100 rounded-lg shadow-lg mb-4 flex flex-col">
                 <!-- Message Container (scrollable when content overflows) -->
                 <div id="messages" class="flex-1 overflow-y-auto space-y-8 flex flex-col h-[700px]">
-                    <!-- Messages will be displayed here -->
+
+                    <!-- Centered Loading GIF Container -->
+                    <div id="loading-container" class="flex items-center justify-center h-full">
+                        <div class="flex items-center space-x-4 p-4">
+                            <!-- GIF on the Left -->
+                            <img src="{{ asset('Hello.gif') }}" alt="Hello GIF" class="w-200 object-cover">
+
+                            <!-- Text on the Right -->
+                            <div class="p-20 text-lg font-semibold text-gray-600">
+                                Wora is an innovative, AI-powered platform designed to empower content creators by offering a wide range of advanced tools for generating, editing, and adapting content. With Wora, creators can easily craft high-quality material tailored for multiple platforms, ensuring that their content is optimized for different audiences and formats. Whether you're creating articles, social media posts, or other digital content, Wora’s intuitive interface and smart features provide the flexibility and efficiency needed to streamline the content creation process. </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Chat messages will be appended here -->
                 </div>
             </div>
 
+
+
             <!-- User Input Field -->
             <div class="flex mt-4">
-                <input id="user-input" type="text" class="flex-1 p-3 border rounded-lg mr-2 bg-white" placeholder="Type a message...">
-                <button id="send-btn" class="p-3 bg-blue-500 text-white rounded-lg">Send</button>
+                <input id="user-input" type="text" class="flex-1 p-3 text-gray-500 border rounded-lg mr-2 bg-white" placeholder="Type a message...">
+                <button id="send-btn" class="p-3 bg-black text-white rounded-lg">Send</button>
             </div>
         </div>
 
         <!-- Content Component Section -->
-        <div class="md:w-1/3 p-6 rounded-lg shadow-lg bg-white flex flex-col space-y-4" id="content-component">
-            <div id="adapted-content" class="mt-6 space-y-4">
-                <!-- Instagram Box -->
-                <div class="p-4 bg-gray-100 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-2">Instagram</h3>
-                    <p id="instagram-box" class="text-gray-700">Check out this amazing view from the top of the mountains! The sunrise was breathtaking, and I couldn't resist capturing the moment. #MountainViews #Sunrise #Adventure</p>
-                </div>
+        <div class="md:w-1/3 p-6 rounded-lg shadow-lg bg-black flex flex-col h-[750px] space-y-4 text-white" id="content-component">
+    <h2 class="text-xl font-bold">Your Adaptations Come Here!</h2>
 
-                <!-- Twitter Box -->
-                <div class="p-4 bg-gray-100 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-2">Twitter</h3>
-                    <p id="twitter-box" class="text-gray-700">Just finished an incredible book on productivity! Highly recommend "Atomic Habits" to anyone looking to improve their daily routines. #Books #Productivity #SelfImprovement</p>
-                </div>
-
-                <!-- LinkedIn Box -->
-                <div class="p-4 bg-gray-100 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-2">LinkedIn</h3>
-                    <p id="linkedin-box" class="text-gray-700">Excited to announce that I’ve completed my certification in Web Development! Looking forward to new opportunities and challenges in the tech world. #WebDevelopment #Certifications #CareerGrowth</p>
-                </div>
-
-                <!-- Medium Box -->
-                <div class="p-4 bg-gray-100 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-2">Medium Blog</h3>
-                    <p id="medium-box" class="text-gray-700">In today’s blog post, I dive deep into the concept of "Digital Minimalism" and how it has transformed the way I approach technology in my personal and professional life. #DigitalMinimalism #Productivity #TechLifestyle</p>
-                </div>
+    <div id="adapted-content" class="mt-6 space-y-4">
+        <!-- Instagram Box -->
+        <div class="p-4 bg-gray-900 rounded-lg shadow-md max-h-[150px] overflow-y-auto relative">
+            <div class="flex items-center justify-between mb-2">
+                <h3 class="text-xl font-semibold text-white">Instagram</h3>
+                <span class="pin"></span>
             </div>
+            <p id="instagram-box" class="text-gray-300">
+                Laravel and Tailwind CSS bring structure and style to Wora! With Laravel powering the backend and Tailwind making the UI clean and responsive, we focus on both functionality and aesthetics.
+            </p>
         </div>
+
+        <!-- Twitter Box -->
+        <div class="p-4 bg-gray-900 rounded-lg shadow-md max-h-[150px] overflow-y-auto relative">
+            <div class="flex items-center justify-between mb-2">
+                <h3 class="text-xl font-semibold text-white">Twitter</h3>
+                <span class="pin"></span>
+            </div>
+            <p id="twitter-box" class="text-gray-300">
+                Wora uses Google Cloud's Vertex AI for dynamic content generation! This integration enables content creators to edit and adapt across platforms.
+            </p>
+        </div>
+
+        <!-- LinkedIn Box -->
+        <div class="p-4 bg-gray-900 rounded-lg shadow-md max-h-[100px] overflow-y-auto relative">
+            <div class="flex items-center justify-between mb-2">
+                <h3 class="text-xl font-semibold text-white">LinkedIn</h3>
+                <span class="pin"></span>
+            </div>
+            <p id="linkedin-box" class="text-gray-300">
+                Excited to share that Wora is built on MariaDB for data management! Using MariaDB ensures robust, scalable performance for all your content needs.
+            </p>
+        </div>
+
+        <!-- Medium Box -->
+        <div class="p-4 bg-gray-900 rounded-lg shadow-md max-h-[250px] overflow-y-auto relative">
+            <div class="flex items-center justify-between mb-2">
+                <h3 class="text-xl font-semibold text-white">Medium Blog</h3>
+                <span class="pin"></span>
+            </div>
+            <p id="medium-box" class="text-gray-300">
+                Wora combines Laravel, Tailwind, MariaDB, and Vertex AI to simplify cross-platform content generation! Check out our journey building a tool that empowers creators everywhere. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam fuga minus delectus. Dolorem explicabo necessitatibus iusto, quibusdam blanditiis autem ducimus ea, assumenda dolor adipisci harum culpa ipsa, maxime quas repudiandae.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+      .pin {
+        height: 12px;
+        width: 12px;
+        background-color: #ff6b35; /* Orange color */
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    /* Inner black circle */
+    .pin::after {
+        content: '';
+        height: 6px;
+        width: 6px;
+        background-color: #000000; /* Black color */
+        border-radius: 50%;
+        display: inline-block;
+    }
+</style>
+
+
+
     </div>
 
 
@@ -103,11 +172,21 @@
             }
         });
 
+        // Function to hide the loading GIF container
+        function hideLoadingGif() {
+            const loadingContainer = document.getElementById('loading-container');
+            if (loadingContainer) {
+                loadingContainer.style.display = 'none';
+            }
+        }
+
         // Function to add message to the chat
         function addMessage(sender, text) {
+            hideLoadingGif(); // Hide the loading GIF when the first message is added
+
             const messageContainer = document.getElementById('messages');
             const messageElement = document.createElement('div');
-            messageElement.classList.add('p-2', 'rounded-lg', 'mb-2', 'max-w-2xl'); // Changed max-w-xs to max-w-lg
+            messageElement.classList.add('p-2', 'rounded-lg', 'mb-2', 'max-w-2xl');
 
             if (sender === 'You') {
                 messageElement.classList.add('bg-blue-200', 'text-blue-800', 'self-end');
@@ -119,6 +198,7 @@
             messageContainer.appendChild(messageElement);
             scrollToBottom(); // Ensure we scroll to the bottom after adding the message
         }
+
 
         // Function to send user input to the backend for AI response
         function sendMessageToAI(userMessage) {
@@ -232,9 +312,6 @@
                 console.error(`No content area found for platform: ${platformId}`);
             }
         }
-
-
-
 
         document.getElementById('save-notes-btn').addEventListener('click', function() {
             if (lastGeneratedResponse.trim() === "") {

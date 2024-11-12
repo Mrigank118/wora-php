@@ -12,6 +12,8 @@
 </head>
 
 <body class="bg-gray-100 font-sans antialiased">
+
+    <x-navbar />
     <div class="relative flex flex-col justify-center min-h-screen overflow-hidden px-4">
         <div class="w-full max-w-md p-6 bg-white rounded-xl shadow-lg ring-2 ring-gray-800/50 mx-auto">
             <h1 class="text-2xl font-semibold text-center text-gray-700 mb-6">Login to Your Account</h1>
@@ -35,29 +37,31 @@
                 <div>
                     <label for="email" class="block text-base font-medium text-gray-500">Email Address</label>
                     <input name="email" type="email" id="email" placeholder="Enter your email"
-                        class="w-full p-4 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-800 @error('email') border-red-500 @enderror" />
+                        class="w-full p-4 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:outline-none text-gray-800 @error('email') border-red-500 @enderror" />
                 </div>
 
                 <div>
                     <label for="password" class="block text-base font-medium text-gray-500">Password</label>
                     <input name="password" type="password" id="password" placeholder="Enter your password"
-                        class="w-full p-4 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-800 @error('password') border-red-500 @enderror" />
+                        class="w-full p-4 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:outline-none text-gray-800 @error('password') border-red-500 @enderror" />
                 </div>
 
                 <div>
                     <button type="submit"
-                        class="w-full py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-300">
+                        class="w-full py-4 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 transition duration-300">
                         Login
                     </button>
                 </div>
 
                 <div class="text-center text-sm text-gray-600">
                     <span>Don't have an account? </span>
-                    <a href="{{ route('register') }}" class="text-blue-600 hover:text-blue-800 hover:underline">Register</a>
+                    <a href="{{ route('register') }}" class="text-black hover:text-gray-800 hover:underline">Register</a>
                 </div>
             </form>
         </div>
     </div>
+
+    <x-footer />
 </body>
 
 </html>
