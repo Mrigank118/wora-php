@@ -105,3 +105,8 @@ Before setting up Wora, make sure you have the following installed:
    ```bash
    git clone https://github.com/your-username/wora.git
    cd wora
+
+### Screenshots
+
+- `![Welcome Screenshot](welcome.png)`
+- `![Notes Screenshot](notes.png)`
