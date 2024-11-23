@@ -7,7 +7,7 @@
     <title>Your Saved Notes</title>
     @vite('resources/css/app.css')
     <style>
-        /* Colors for note cards */
+       
         .note-card:nth-child(1) { background-color: #ffd966; }
         .note-card:nth-child(2) { background-color: #f28b82; }
         .note-card:nth-child(3) { background-color: #81c995; }
@@ -33,23 +33,23 @@
             transform: translateY(-5px);
         }
 
-        /* Content styling */
+       
         .note-content {
             color: #333333;
-            font-size: 1.1rem; /* Increased font size */
+            font-size: 1.1rem; 
             line-height: 1.5;
             margin-bottom: 20px;
         }
 
         .note-date {
-            font-size: 1rem; /* Increased font size */
+            font-size: 1rem; 
             color: #5f6368;
             position: absolute;
             bottom: 12px;
             left: 16px;
         }
 
-        /* Blue Dot styling */
+       
         .blue-dot {
             height: 8px;
             width: 8px;
@@ -63,17 +63,17 @@
 
 <body class="bg-gray-100 min-h-screen">
 
-    <!-- Navbar -->
+   
     <header class="bg-blue-600 text-white">
-        <x-navbar /> <!-- Loads the navbar component -->
+        <x-navbar /> 
     </header>
 
-    <!-- Main Content -->
+    
     <main class="w-full mx-auto p-6">
         <div class="max-w-screen-xl mx-auto">
             <h1 class="text-2xl font-semibold mb-6">Your Saved Notes</h1>
 
-            <!-- Notes Container -->
+          
             <div id="notes-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-6">
                 <!-- Notes will be dynamically loaded here -->
             </div>
