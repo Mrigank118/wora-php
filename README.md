@@ -110,3 +110,7 @@ Before setting up Wora, make sure you have the following installed:
 
 ![Welcome Screenshot](/public/welcome.png)
 ![Notes Screenshot](/public/notes.png)
+
+## Collaborators
+[![Mrigank118](https://img.shields.io/badge/Mrigank118-FFA500?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Mrigank118)
+[![Jainritikaa](https://img.shields.io/badge/Jainritikaa-FFA500?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Jainritikaa)
