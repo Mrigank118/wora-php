@@ -108,5 +108,5 @@ Before setting up Wora, make sure you have the following installed:
 
 ### Screenshots
 
-- `![Welcome Screenshot](welcome.png)`
-- `![Notes Screenshot](notes.png)`
+![Welcome Screenshot](welcome.png)
+![Notes Screenshot](notes.png)
