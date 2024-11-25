@@ -105,7 +105,9 @@ Before setting up Wora, make sure you have the following installed:
    ```bash
    git clone https://github.com/your-username/wora.git
    cd wora
-
+2. Run: npm run dev
+3. Run: php artisan serve
+   
 ### Screenshots
 
 ![Welcome Screenshot](/public/welcome.png)
