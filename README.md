@@ -1,6 +1,3 @@
-Here's the updated **Markdown content** for your project with the new images and complete installation steps:
-
-```txt
 # Wora: Write Once, Run Anywhere
 
 **Wora** is a powerful content adaptation tool designed to simplify and enhance the process of content creation for multiple platforms. With Wora, content creators can generate, adapt, and optimize their content with ease, powered by modern technologies like **Laravel**, **Tailwind CSS**, **MariaDB**, and **Google Cloud's Vertex AI**.
@@ -108,7 +105,7 @@ Before setting up Wora, make sure you have the following installed:
    ```bash
    git clone https://github.com/your-username/wora.git
    cd wora
-   ```
+
 
 2. **Install frontend dependencies:**
    ```bash
