@@ -6,7 +6,7 @@ By leveraging these technologies, Wora not only ensures robust performance but a
 
 ### Screenshots
 
-![Welcome Screenshot](woraPHPPreview_1.png)
+![Welcome Screenshot](woraPHPPreview_1_TSP.png)
 
 ---
 
