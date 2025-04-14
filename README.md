@@ -4,6 +4,10 @@
 
 By leveraging these technologies, Wora not only ensures robust performance but also delivers a sleek, responsive user experience that allows content to be tailored for platforms like **Instagram**, **Twitter**, **LinkedIn**, **Medium**, and more.
 
+### Screenshots
+
+![Welcome Screenshot](woraPHPPreview_1.png)
+
 ---
 
 ## 🌟 Features
@@ -139,11 +143,6 @@ Before setting up Wora, make sure you have the following installed:
    ```bash
    npm run dev
    ```
-
-### Screenshots
-
-![Welcome Screenshot](woraPHPPreview_1.png)
-![Notes Screenshot](woraPHPPreview_2.png)
 
 ## Collaborators
 [![Mrigank118](https://img.shields.io/badge/Mrigank118-FFA500?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Mrigank118)
