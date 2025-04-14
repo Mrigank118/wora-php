@@ -1,3 +1,6 @@
+Here's the updated **Markdown content** for your project with the new images and complete installation steps:
+
+```txt
 # Wora: Write Once, Run Anywhere
 
 **Wora** is a powerful content adaptation tool designed to simplify and enhance the process of content creation for multiple platforms. With Wora, content creators can generate, adapt, and optimize their content with ease, powered by modern technologies like **Laravel**, **Tailwind CSS**, **MariaDB**, and **Google Cloud's Vertex AI**.
@@ -105,13 +108,45 @@ Before setting up Wora, make sure you have the following installed:
    ```bash
    git clone https://github.com/your-username/wora.git
    cd wora
-2. Run: npm run dev
-3. Run: php artisan serve
+   ```
+
+2. **Install frontend dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Install backend dependencies:**
+   ```bash
+   composer install
+   ```
+
+4. **Set up the environment file:**
+   - Copy `.env.example` to `.env` and configure it with your database and API credentials.
    
+5. **Generate the application key:**
+   ```bash
+   php artisan key:generate
+   ```
+
+6. **Run the migrations:**
+   ```bash
+   php artisan migrate
+   ```
+
+7. **Start the Laravel development server:**
+   ```bash
+   php artisan serve
+   ```
+
+8. **Run the frontend development server:**
+   ```bash
+   npm run dev
+   ```
+
 ### Screenshots
 
-![Welcome Screenshot](/public/welcome.png)
-![Notes Screenshot](/public/notes.png)
+![Welcome Screenshot](woraPHPPreview_1.png)
+![Notes Screenshot](woraPHPPreview_2.png)
 
 ## Collaborators
 [![Mrigank118](https://img.shields.io/badge/Mrigank118-FFA500?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Mrigank118)
